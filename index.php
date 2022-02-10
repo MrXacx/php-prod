@@ -1,27 +1,24 @@
-<?php
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Formulário de inscrição</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Formulário de inscrição para o VI Torneio de Natação</h1>
+    <form  id="input" action="script.php" method="post" >
+        <p> Seu nome: 
+        <input type="text" name="nome"/>
+        </p>
+        <p> Sua idade: 
+        <input type="text" name="idade"/>
+        </p>
+        <p> <input type="submit" value="Consultar inscrição"/></p>
+    </form>
 
-$categorias = [];
-$categorias[] = "Infantil";
-$categorias[] = "Adolescente";
-$categorias[] = "Adulto";
-
-$nome = "Ariel";
-$idade = 23;
-
-if($idade >= 6 AND $idade <= 12){
-    echo "O competidor " , $nome , " participa da categoria " , $categorias[0];
-}
-
-if($idade >= 13 AND $idade <= 18 ){
-    echo "O competidor " , $nome , " participa da categoria " , $categorias[1];
-}
-
-if($idade >= 19 AND $idade <= 45){
-    echo "O competidor " , $nome , " participa da categoria " , $categorias[2];
-}
-
-else{
-    echo "Infelizmente a competição não comporta a sua faixa etária.";
-}
-
-?>
+    
+</body>
+</html>
