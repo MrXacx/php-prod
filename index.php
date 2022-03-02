@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,6 +13,15 @@
 <body>
     <h1>Formulário de inscrição para o VI Torneio de Natação</h1>
     <form  id="input" action="script.php" method="post" >
+
+        <?php
+            /* atribui o valor do $_SESSION a $error
+               caso o if seja falso, o $_SESSION não terá valor e $error não passará no if*/
+            $error = isset($_SESSION["mensagem-de-erro"]) ? $_SESSION["mensagem-de-erro"] : "";
+            if(!empty("error")){
+                echo $error;
+            }
+        ?>
         <p> Seu nome: 
         <input type="text" name="nome"/>
         </p>
@@ -17,8 +29,12 @@
         <input type="text" name="idade"/>
         </p>
         <p> <input type="submit" value="Consultar inscrição"/></p>
+        <?php
+        $sucess = isset($_SESSION["mensagem-de-sucesso"]) ? $_SESSION["mensagem-de-sucesso"] : "";
+        if(!empty("sucess")){
+            echo $sucess;
+        }     
+        ?>
     </form>
-
-    
 </body>
 </html>
