@@ -1,5 +1,5 @@
 <?php
-session_start();
+include "./servico/mensagemSessao.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,8 +16,8 @@ session_start();
 
         <?php
             /* atribui o valor do $_SESSION a $error
-               caso o if seja falso, o $_SESSION não terá valor e $error não passará no if*/
-            $error = isset($_SESSION["mensagem-de-erro"]) ? $_SESSION["mensagem-de-erro"] : "";
+               caso o if seja falso, o $_SESSION não tem valor e $error não passará no if*/
+            $error = obterMensagemErro();
             if(!empty("error")){
                 echo $error;
             }
@@ -30,7 +30,7 @@ session_start();
         </p>
         <p> <input type="submit" value="Consultar inscrição"/></p>
         <?php
-        $sucess = isset($_SESSION["mensagem-de-sucesso"]) ? $_SESSION["mensagem-de-sucesso"] : "";
+        $sucess = obterMensagemSucesso();
         if(!empty("sucess")){
             echo $sucess;
         }     
